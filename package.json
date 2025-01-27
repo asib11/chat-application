@@ -4,8 +4,8 @@
   "description": "make real-time chat application using nodejs web socket",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js",
-    "prod": "node app.js"
+    "start": "NODE_ENV=development nodemon app.js",
+    "prod": "NODE_ENV=production node app.js"
   },
   "repository": {
     "type": "git",
