@@ -19,10 +19,10 @@ app.use(express.urlencoded({extended : true}))
 app.set('view engine', 'ejs');
 
 //set static folder
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'public')));
 
 //perse cookie
-app.use(cookieParser(process.env.COOKIE_SECRET))
+app.use(cookieParser(process.env.COOKIE_SECRET));
 
 //routing setup
 
