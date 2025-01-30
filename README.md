@@ -16,3 +16,10 @@ or YARN
 ```
 yarn install
 ```
+
+## Some important resource
+### multer error handling
+https://www.npmjs.com/package/multer
+
+## validateJs use for validation
+https://validatejs.org/#utilities
