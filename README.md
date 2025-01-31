@@ -7,12 +7,10 @@ npm i express dotenv ejs mongoose multer cookie-parser express-validator jsonweb
 ```
 ### Setup existing nodejs for 
 NPM
-
 ```
 npm i
 ```
 or YARN 
-
 ```
 yarn install
 ```
@@ -21,5 +19,5 @@ yarn install
 ### multer error handling
 https://www.npmjs.com/package/multer
 
-## validateJs use for validation
+### validateJs use for validation
 https://validatejs.org/#utilities
