@@ -8,24 +8,31 @@ const {
   addUser,
   removeUser,
 } = require("../controller/usersController");
-const decoratedHtml = require('../middleware/common/decorateHtml')
+const decorateHtmlResponse = require("../middleware/common/decorateHtml");
 const avatarUpload = require("../middleware/users/avatarUpload");
 const {
   addUserValidators,
   addUserValidationHandler,
 } = require("../middleware/users/userValidators");
 
-const { checkLogin } = require("../middleware/common/checkLogin");
+const { checkLogin, requireRole } = require("../middleware/common/checkLogin");
 
 const router = express.Router();
 
 // users page
-router.get("/", decoratedHtml("Users"), checkLogin, getUsers);
+router.get(
+  "/",
+  decorateHtmlResponse("Users"),
+  checkLogin,
+  requireRole(["admin"]),
+  getUsers
+);
 
 // add user
 router.post(
   "/",
   checkLogin,
+  requireRole(["admin"]),
   avatarUpload,
   addUserValidators,
   addUserValidationHandler,
@@ -33,6 +40,6 @@ router.post(
 );
 
 // remove user
-router.delete("/:id", removeUser);
+router.delete("/:id", checkLogin, requireRole(["admin"]), removeUser);
 
 module.exports = router;
