@@ -21,3 +21,9 @@ https://www.npmjs.com/package/multer
 
 ### validateJs use for validation
 https://validatejs.org/#utilities
+
+
+## Realtime Chat and some design
+```
+npm install socket.io moment
+```
