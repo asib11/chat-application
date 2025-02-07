@@ -27,3 +27,31 @@ https://validatejs.org/#utilities
 ```
 npm install socket.io moment
 ```
+
+## Deploy Vercel
+```
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "app.js",
+            "use": "@vercel/node",
+            "config": {
+                "includeFiles": [
+                    "views/**", "public/**"
+                ]
+            }
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "app.js",
+            "methods": ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+            "headers": {
+                "Access-Control-Allow-Origin": "*"
+            }
+        }
+    ]
+}
+```
