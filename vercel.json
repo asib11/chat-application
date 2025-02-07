@@ -17,7 +17,7 @@
         }
     ],
     "functions": {
-    "server.js": {
+    "app.js": {
       "includeFiles": ["views/**/*", "public/**/*"]
     }
   }
