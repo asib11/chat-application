@@ -15,5 +15,10 @@
                 "Access-Control-Allow-Origin": "*"
             }
         }
-    ]
+    ],
+    "functions": {
+    "server.js": {
+      "includeFiles": ["views/**/*", "public/**/*"]
+    }
+  }
 }
