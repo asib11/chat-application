@@ -3,7 +3,12 @@
     "builds": [
         {
             "src": "app.js",
-            "use": "@vercel/node"
+            "use": "@vercel/node",
+            "config": {
+                "includeFiles": [
+                    "views/**", "public/**"
+                ]
+            }
         }
     ],
     "routes": [
@@ -15,10 +20,5 @@
                 "Access-Control-Allow-Origin": "*"
             }
         }
-    ],
-    "functions": {
-    "app.js": {
-      "includeFiles": ["views/**/*", "public/**/*"]
-    }
-  }
+    ]
 }
