@@ -23,7 +23,7 @@ app.locals.moment = moment;
 
 //database connection
 mongoose
-  .connect(process.env.DATABASE_STRING)
+  .connect(process.env.DATABASE_STRING, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("database connected successfully"))
   .catch((err) => console.log(err));
 
